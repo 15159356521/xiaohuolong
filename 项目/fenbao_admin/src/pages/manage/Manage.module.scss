@@ -1,0 +1,137 @@
+.root {
+  position: relative;
+  padding: 30px 40px;
+  width: 1080px;
+  height: 1706px;
+  background: #fff;
+  border-radius: 8px;
+  :global {
+    .top {
+      .filter {
+        width: 1000px;
+        background: #fff;
+        padding: 0;
+        margin: 20px 0;
+        display: flex;
+        .pullLeft {
+          color: #999;
+          line-height: 28px;
+          font-weight: 600;
+          float: none !important;
+        }
+        .filRight {
+          margin-left: 20px;
+          float: left;
+          margin-bottom: -10px;
+          border: 0;
+          .ant-radio-button-wrapper:first-child {
+            border-left: 0;
+          }
+          .ant-radio-button-wrapper:not(:first-child):before {
+            border: 0;
+            width: 0;
+          }
+          .ant-radio-button-wrapper {
+            border: 0;
+
+            border-radius: 5px;
+          }
+        }
+      }
+      .herBut {
+        width: 90px;
+        height: 40px;
+        margin-left: 10px;
+      }
+    }
+    .article {
+      .pag{
+        display: flex;
+        flex-flow: row-reverse;
+      }
+      .spin{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+      }
+      margin-top: 20px;
+      .viedo {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eff2f6;
+        padding-bottom: 20px;
+        .pic {
+          float: left;
+          z-index: 9;
+          display: block;
+          width: 142px;
+          height: 80px;
+          margin-top: 4px;
+          position: relative;
+          overflow: hidden;
+          img {
+            display: block;
+            position: relative;
+            width: 142px;
+          }
+          .mediaMask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            text-align: center;
+            line-height: 80px;
+            .icon {
+              position: absolute;
+              right: 7px;
+              bottom: 7px;
+              top: auto;
+              margin-right: 0;
+              svg {
+                width: 25px;
+                height: 25px;
+                fill: white;
+              }
+              fill: white;
+            }
+          }
+        }
+        .content {
+          margin-left: 160px;
+          width: 840px;
+          h4 {
+            line-height: 28px;
+            font-size: 16px;
+            font-weight: 400;
+            a {
+              max-width: 100% !important;
+              color: #222;
+            }
+          }
+        .infos{
+          display: flex;
+          width: 700px;
+          .pull{
+            display: flex;
+            width: 500px;
+            justify-content: space-around;
+            color: #8e9aa9;
+          }
+          justify-content: space-between;
+       
+        }
+        .mediaAction{
+          display: flex;
+          width: 700px;
+          justify-content: space-between;
+          color: #8e9aa9;
+        }
+        }
+      }
+    }
+  }
+}

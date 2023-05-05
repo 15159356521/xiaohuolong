@@ -1,0 +1,25 @@
+.root {
+    :global {
+        .leftWrapper {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            .icon {
+                margin-right: 15px;
+            }
+            img {
+                width: 25px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            p {
+                margin-right: 15px;
+                margin-top: 10px;
+            }
+            .logout {
+                font-style: normal;
+                cursor: pointer;
+            }
+        }
+    }
+}

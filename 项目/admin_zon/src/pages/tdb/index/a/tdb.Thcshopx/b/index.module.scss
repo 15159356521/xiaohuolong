@@ -1,0 +1,32 @@
+.root {
+  margin: 20px;
+  width: 100%;
+  height: 94vh;
+  overflow: auto;
+  padding-bottom: 75px;
+  :global {
+    .ant-form-horizontal {
+      .list {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .ant-form-item-control-input-content{
+      display: flex;
+      .ant-radio-button-wrapper-in-form-item{
+        margin-right: 10px;
+      }
+    }
+    img{
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+  }
+  @media (max-width: 575px)
+  {
+    .filter {
+      width: 300px;
+    }
+  }
+  }
+}

@@ -1,0 +1,19 @@
+.root {
+    width: 300px;
+    :global { 
+        .form {
+            .autoLogin {
+                width: 300px;
+            }
+        }
+        .code {
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 100px;
+                height: 32px;
+                cursor: pointer;
+            }
+        }
+    }
+}

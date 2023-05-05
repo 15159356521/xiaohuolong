@@ -1,0 +1,37 @@
+.root {
+
+  // border: 1px solid;
+
+  :global {
+    // .ant-form-itemP {
+    //   // margin-left: 40px;
+    // }
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+    position: relative;
+    .ant-input-borderless {
+      width: 450px;
+    }
+    .foot{
+      margin-top: 10px;
+      margin-left:  100px 
+    }
+    @media (max-width: 575px)
+    {
+        width: 288px !important;
+
+        .ant-input-borderless {
+          width: 250px !important;
+        }
+        .foot{
+      
+          margin-left:  0 !important 
+        }
+        .ant-form-item-row{
+          width: 220px !important;
+        }
+       
+    }
+  }
+}

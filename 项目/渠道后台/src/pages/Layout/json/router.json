@@ -1,0 +1,85 @@
+[
+  {
+    "id": "1",
+    "permission": "设置",
+    "children": [
+      {
+        "id": "1.1",
+        "key": "/personal",
+        "permission": "个人信息"
+      },
+      {
+        "id": "1.2",
+        "key": "/password",
+        "permission": "修改密码"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "permission": "店家管理",
+    "children": [
+      {
+        "id": "2.1",
+        "key": "/Management/storeclassify",
+        "permission": "店家分组"
+      },
+      {
+        "id": "2.2",
+        "key": "/Management/storelist",
+        "permission": "店家列表"
+      },
+      {
+        "id": "2.3",
+        "key": "Management/underreview",
+        "permission": "审核中店家"
+      },
+      {
+        "id": "2.4",
+        "key": "Management/storereport",
+        "permission": "店家报表"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "permission": "运营管理",
+    "children": [
+      {
+        "id": "3.1",
+        "key": "/Operation/equipmentlist",
+        "permission": "设备列表"
+      },
+      {
+        "id": "3.2",
+        "key": "/Operation/withdrawals",
+        "permission": "提现记录"
+      },
+      {
+        "id": "3.3",
+        "key": "Operation/earnings",
+        "permission": "收益记录"
+      },
+      {
+        "id": "3.4",
+        "key": "Operation/device",
+        "permission": "设备报表"
+      },
+      {
+        "id": "3.5",
+        "key": "Operation/promocode",
+        "permission": "我的推广码"
+      },
+      {
+        "id": "3.6",
+        "key": "Operation/member",
+        "permission": "我的会员"
+      },
+      {
+        "id": "3.7",
+        "key": "Operation/recharge",
+        "permission": "充值记录"
+      }
+    ]
+  }
+]

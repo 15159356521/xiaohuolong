@@ -1,0 +1,124 @@
+[
+  {
+    "id": "1",
+    "key":"/overview",
+    "permission": "主页"
+  },
+  {
+    "id": "2",
+    "permission": "创作",
+    "children": [
+      {
+        "id": "2.1",
+        "key":"/creation/publish",
+        "permission": "短视频"
+      },
+      {
+        "id": "2.2",
+        "key":"/creation/collections",
+        "permission": "合辑"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "permission": "管理",
+    "children": [
+      {
+        "id": "3.1",
+        "key":"/manage",
+        "permission": "我的内容"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "permission": "子账号管理",
+    "children": [
+      {
+        "id": "4.1",
+        "key":"/subAccount",
+        "permission": "我的子账号"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "permission": "数据",
+    "children": [
+      {
+        "id": "5.1",
+        "key":"/analysis",
+
+        "permission": "视频统计"
+
+      }
+    ]
+  },  {
+    "id": "6",
+    "permission": "收益",
+    "children": [
+      {
+        "id": "6.1",
+        "key":"/settlement/analysis",
+        "permission": "收益统计"
+      },{
+        "id": "6.2",
+        "key":"/settlement/center",
+        "permission": "结算中心"
+      }
+    ]
+  }, {
+    "id": "7",
+    "permission": "活动中心",
+    "children": [
+      {
+        "id": "7.1",
+        "key":"/activity",
+        "permission": "活动"
+      },{
+        "id": "7.2",
+        "key":"/missions",
+        "permission": "任务"
+      }
+    ]
+  }, {
+    "id": "8",
+    "permission": "版权中心",
+    "children": [
+      {
+        "id": "8.1",
+        "key":"/copyright",
+        "permission": "版权展示"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "permission": "设置",
+    "children": [
+      {
+        "id": "9.1",
+        "key":"/account/setting",
+        "permission": "账号设置"
+      },{
+        "id": "9.2",
+        "key":"/account/status",
+        "permission": "账号状态"
+      },{
+        "id": "9.3",
+        "key":"/account/right",
+        "permission": "权益中心"
+      },{
+        "id": "9.4",
+        "key":"/account/help",
+        "permission": "常见问题"
+      },{
+        "id": "9.5",
+        "key":"/account/log",
+        "permission": "安全中心"
+      }
+    ]
+  }
+
+]

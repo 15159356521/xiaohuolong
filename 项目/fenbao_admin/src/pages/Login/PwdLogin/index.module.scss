@@ -1,0 +1,22 @@
+.root {
+    width: 300px;
+    :global { 
+        .form {
+
+            .autoLogin {
+                width: 300px;
+            }
+        }
+        .ant-btn-block{
+            margin-left: 5px;
+        }
+        .ant-modal-content{
+            background-color: violet;
+                .ant-modal-title{
+            display: flex;
+            justify-content: center;
+        }
+        }
+    
+    }
+}

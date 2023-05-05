@@ -1,0 +1,15 @@
+.root {
+    width: 300px;
+    :global { 
+        .codeRow {
+            display: flex;
+            justify-content: space-between;
+            .codeInput {
+                width: 180px;
+            }
+        }
+        .autoLogin {
+            width: 300px;
+        }
+    }
+}

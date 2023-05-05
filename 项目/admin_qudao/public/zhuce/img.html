@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="utf-8"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- <link href="/css/layer.css" rel="stylesheet" type="text/css" /> -->
+    <link href="./css/layer.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./LCalendar/css/LCalendar.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="LCalendar/css/LCalendar.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./LCalendar/js/LCalendar.min.js" /> -->
+    <!-- <script type="text/javascript" src="./LCalendar/js/LCalendar.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script> -->
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/layer.js"></scrip> -->
+    <script type="text/javascript" src="./js/layer.js"></script>
+    <!-- <script type="text/javascript" src="/js/login.js"></script> -->
+    <script type="text/javascript" src="./js/login.js"></script>
+
+    <title>多商家注册</title>
+    <style>
+      body {
+        background: #fff;
+      }
+
+      .title {
+        margin-top: 65px;
+        padding: 0 20px;
+        font-size: 16px;
+        position: fixed;
+        background: white;
+        width: 100%;
+        line-height: 40px;
+        z-index: 99;
+      }
+
+      .content form {
+        padding: 0 20px;
+        overflow: hidden;
+        margin-top: 110px;
+        margin-bottom: 70px;
+      }
+
+      .content .form-item {
+        color: rgba(0, 0, 0, 1);
+        font-size: 0.7em;
+        margin: 8px auto;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .content .form-item label {
+        width: 90px;
+        display: inline-block;
+      }
+
+      .content .form-item .start-time {
+        text-indent: 4px;
+        width: calc((100% - 120px) / 2);
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+      }
+      .content .form-item .end-time {
+        text-indent: 4px;
+        width: calc((100% - 120px) / 2);
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+      }
+
+      .content .form-item input {
+        line-height: 30px;
+        outline: none;
+        font-size: 0.8em;
+        background-color: #e5ebe6;
+        text-indent: 15px;
+        border-radius: 15px;
+        /* width: 120px; */
+      }
+
+      .content .form-item input.age,
+      input.height,
+      input.weight {
+        width: 170px;
+      }
+
+      .content .form-item label.base_flow_label {
+        width: 170px;
+      }
+
+      input::-webkit-input-placeholder {
+        color: #666;
+        font-size: 1em;
+      }
+
+      .content .form-item .select {
+        width: calc((100% - 120px) / 2);
+        height: 30px;
+        background: #e5ebe6;
+        border: none;
+        border-radius: 11px;
+        text-indent: 15px;
+        /* width: 12%;
+            margin-left: 64%;
+            border: none;
+            outline: none; */
+        /*将默认的select选择框样式清除*/
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        /*在选择框的最右侧中间显示小箭头图片*/
+        /*background: url("img/箭头.png") no-repeat scroll right center transparent;*/
+      }
+
+      .content .form-item .opening-hours {
+        width: calc(100% - 110px);
+        height: 30px;
+        background: #e5ebe6;
+        border: none;
+        border-radius: 11px;
+        /*将默认的select选择框样式清除*/
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+      }
+
+      .content .form-item .select:after {
+        content: "\25BC";
+      }
+
+      .a-upload {
+        display: inline-block;
+        margin: 0 2px;
+        width: 82px;
+        height: 54px;
+        position: relative;
+        cursor: pointer;
+        color: #888;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+        background-size: 100% 100%;
+      }
+
+      .a-upload input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer;
+      }
+
+      .business-license {
+        background: url("img/营业执照.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .boss-card-photo-front {
+        background: url("img/身份证正面.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .boss-card-photo-back {
+        background: url("img/身份证背面.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .operator-card-photo-front {
+        background: url("img/操作员身份证正面.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .operator-card-photo-back {
+        background: url("img/操作员身份证背面.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .environment1 {
+        background: url("img/店招照片.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .environment2 {
+        background: url("img/店内环境1.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .environment3 {
+        background: url("img/店内环境2.png") no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .file-ipt {
+        width: 50px;
+        height: 50px;
+      }
+
+      .tips {
+        font-size: 12px;
+      }
+
+      .tips .name {
+        width: 100px;
+        color: red;
+      }
+
+      .tips .des {
+        color: #aeaeae;
+      }
+
+      .select-box {
+        /* width: 12%;
+            margin-left: 64%;
+            border: none;
+            outline: none; */
+        /*将默认的select选择框样式清除*/
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        /*在选择框的最右侧中间显示小箭头图片*/
+        background: url("img/logo.png") no-repeat scroll right center
+          transparent;
+      }
+
+      .logo-box {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        margin-top: 15px;
+      }
+
+      .title-box {
+        display: inline-block;
+      }
+
+      .submit-fixed {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background: white;
+        padding: 0 0 20px 0;
+      }
+
+      .shop-box {
+        width: 100%;
+        height: 90px;
+        border-radius: 10px;
+        background-color: rgba(245, 245, 245, 1);
+        /* padding: 10px; */
+        position: relative;
+      }
+
+      .shop-box .close.close {
+        position: absolute;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        top: 8px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 20px;
+        line-height: 20px;
+      }
+
+      .shop-box .img-box {
+        float: left;
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+      }
+
+      .shop-box .img-box img {
+        width: 70px;
+        height: 70px;
+      }
+
+      .shop-box .des-box {
+        width: 100%;
+        padding: 10px 10px 10px 0;
+      }
+
+      .shop-box .des-box div {
+        line-height: 35px;
+      }
+
+      .shop-box .des-box div span {
+        color: #000;
+      }
+
+      .shop-box .des-box div .name {
+        font-size: 14px;
+      }
+
+      .shop-box .des-box div .des {
+        font-size: 15px;
+      }
+
+      .shop-box .add {
+        text-align: center;
+        line-height: 90px;
+      }
+
+      .popup-box {
+        display: none;
+        position: relative;
+        z-index: 9999;
+      }
+
+      .popup-box .popup {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: auto;
+      }
+
+      .popup-box .popup .popup-content {
+        width: 96%;
+        height: 90%;
+        background: white;
+        margin: 10% auto;
+        border-radius: 10px;
+      }
+
+      .popup-box .popup .popup-content .popup-head {
+        position: relative;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .popup-box .popup .popup-content .popup-head .popup-title {
+        font-size: 16px;
+      }
+
+      .popup-box .popup .popup-content .popup-head .popup-close {
+        position: absolute;
+        right: 0px;
+        top: 2px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .popup-box .popup .popup-content .popup-footer {
+        padding: 10px;
+        overflow-y: auto;
+      }
+
+      .popup-box .popup .popup-content .popup-footer form {
+        margin-top: 0px;
+      }
+
+      .finish-fiexd {
+        width: 90%;
+        margin-top: 40px;
+        background: white;
+      }
+
+      .gearDate {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: block;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        z-index: 9999;
+      }
+    </style>
+
+    <style type="text/css">
+      .container {
+        width: 82px;
+        height: 56px;
+        background-color: transparent;
+      }
+
+      .progress {
+        height: 56px;
+        background-color: #00aafb;
+        display: inline-block;
+        color: #fff;
+        text-align: center;
+        line-height: 56px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="content">
+        <div class="header" style="z-index: 99">
+          <div style="line-height: 51px">
+            <div class="logo-box"><img class="logo" src="./img/xhl.png" /></div>
+            <div class="title-box">
+              <span style="margin-left: 10px">店家注册</span>
+            </div>
+          </div>
+        </div>
+        <div class="title">商家注册申请所需资料:</div>
+        <form method="post" action="demoform.php">
+          <div class="form-item">
+            <label for="">品牌名称：</label>
+            <input
+              class="shop-name"
+              style="width: calc(100% - 110px)"
+              id="shop_name"
+              value=""
+              name="shop_name"
+              placeholder="输入品牌名称"
+            />
+          </div>
+          <div class="form-item">
+            <label for="">联系人：</label>
+            <input
+              class="shop-liasion"
+              style="width: calc(100% - 110px)"
+              id="shop_liasion"
+              value=""
+              name="shop_liasion"
+              placeholder="品牌联系人姓名"
+            />
+          </div>
+          <div class="form-item">
+            <label for="">联系方式：</label>
+            <input
+              class="phone"
+              style="width: calc(100% - 110px)"
+              id="phone"
+              value=""
+              name="phone"
+              placeholder="联系人电话"
+            />
+          </div>
+          <div class="form-item">
+            <label style="width: 150px" for="">营业执照扫描件：</label>
+          </div>
+          <div class="form-item">
+            <a
+              href="javascript:;"
+              id="bus_license_phone_a"
+              class="a-upload business-license"
+            >
+              <input
+                class="file-ipt"
+                type="file"
+                accept="image/*"
+                value=""
+                multiple
+                onchange="uploadFile(this, 'bus_license_phone')"
+              />
+              <input
+                type="hidden"
+                id="bus_license_phone"
+                name="bus_license_phone"
+                value=""
+              />
+              <div id="bus_license_phone_container" class="container">
+                <span id="bus_license_phone_progress" class="progress"></span>
+              </div>
+            </a>
+          </div>
+          <div class="form-item">
+            <label style="width: 160px" for="">法人身份证扫描件：</label>
+          </div>
+          <div class="form-item">
+            <a
+              href="javascript:;"
+              id="boss_card_photo_front_a"
+              class="a-upload boss-card-photo-front"
+            >
+              <input
+                class="file-ipt"
+                type="file"
+                accept="image/*"
+                multiple
+                onchange="uploadFile(this, 'boss_card_photo_front')"
+              />
+              <input
+                type="hidden"
+                id="boss_card_photo_front"
+                name="boss_card_photo_front"
+                value=""
+              />
+              <div id="boss_card_photo_front_container" class="container">
+                <span
+                  id="boss_card_photo_front_progress"
+                  class="progress"
+                ></span>
+              </div>
+            </a>
+            <a
+              href="javascript:;"
+              id="boss_card_photo_back_a"
+              class="a-upload boss-card-photo-back"
+            >
+              <input
+                class="file-ipt"
+                type="file"
+                accept="image/*"
+                multiple
+                onchange="uploadFile(this, 'boss_card_photo_back')"
+              />
+              <input
+                type="hidden"
+                id="boss_card_photo_back"
+                name="boss_card_photo_back"
+                value=""
+              />
+              <div id="boss_card_photo_back_container" class="container">
+                <span
+                  id="boss_card_photo_back_progress"
+                  class="progress"
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div class="form-item">
+            <label for="">身份证号码</label>
+            <input
+              class="idnum"
+              style="width: calc(100% - 110px)"
+              id="idnum"
+              value=""
+              name="idnum"
+              placeholder="输入身份证号码"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="">店家地址：</label>
+            <select class="select select-box" name="province" id="province">
+              <option>省份</option>
+            </select>
+            <select class="select" name="city" id="city">
+              <option>城市</option>
+            </select>
+          </div>
+          <div id="adress">
+            <div class="form-item">
+              <label for=""></label>
+              <input
+                class="address"
+                style="width: calc(100% - 110px)"
+                id="address"
+                value=""
+                name="address"
+                placeholder="详细地址"
+              />
+            </div>
+          </div>
+          <div class="form-item">
+            <label style="width: 160px" for="">我的门店：</label>
+          </div>
+          <div id="shop_branchs_box">
+            <!-- <div class="form-item">
+                  <div class="shop-box">
+                    <div class="img-box">
+                      <img src="img/logo.png" alt="">
+                    </div>
+                    <div class="des-box">
+                      <div class="title-box">
+                        <span class="name">店名：</span><span class="des">店名1</span>
+                      </div>
+                      <div class="address-box">
+                        <span class="name">地址：</span><span class="des">黑龙江省...</span>
+                      </div>
+                    </div>
+                    <div class="close">x</div>
+                  </div>
+                </div> -->
+          </div>
+          <div class="form-item">
+            <div class="shop-box" onclick="showAddShopPopup()">
+              <div class="add"><span>+设备投放地址</span></div>
+            </div>
+          </div>
+        </form>
+        <div class="next-btn submit-fixed">
+          <button class="next" type="button" id="applyJoin">提交申请</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup-box" id="popup_box">
+      <div class="popup">
+        <div class="popup-content">
+          <div class="popup-head">
+            <div class="popup-title">分店申请所需资料：</div>
+            <div onclick="closeAddShopPopup()" class="popup-close">x</div>
+          </div>
+          <div class="popup-footer" style="height: calc(90% - 42px)">
+            <div class="content">
+              <form action="">
+                <div class="form-item">
+                  <label for="">门店名称：</label>
+                  <input
+                    class="shop-branch-name"
+                    style="width: calc(100% - 110px)"
+                    id="shop_branch_name"
+                    value=""
+                    name="shop_branch_name"
+                    placeholder="输入门店名称"
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="">店家地址：</label>
+                  <select
+                    class="select select-box"
+                    name="province"
+                    id="provinceS"
+                  >
+                    <option>省份</option>
+                  </select>
+                  <select class="select" name="city" id="cityS">
+                    <option>城市</option>
+                  </select>
+                </div>
+                <div id="adress">
+                  <div class="form-item">
+                    <label for=""></label>
+                    <input
+                      class="address"
+                      style="width: calc(100% - 110px)"
+                      id="addressS"
+                      value=""
+                      name="address"
+                      placeholder="详细地址"
+                    />
+                  </div>
+                </div>
+                <div class="form-item">
+                  <label for="">营业时间：</label>
+                  <input
+                    class="start-time"
+                    id="start_time"
+                    type="time"
+                    value="09:00"
+                  />
+                  <input
+                    class="end-time"
+                    id="end_time"
+                    type="time"
+                    value="17:00"
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="">员工人数：</label>
+                  <input
+                    style="width: calc(100% - 110px)"
+                    type="number"
+                    class="num"
+                    id="employee_num"
+                    value=""
+                    name="employee_num"
+                    placeholder="输入当前员工人数"
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="">门店面积：</label>
+                  <input
+                    style="width: calc(100% - 110px)"
+                    type="number"
+                    class="num"
+                    id="area"
+                    value=""
+                    name="area"
+                    placeholder="输入门店平方面积"
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="">开业时间：</label>
+                  <input
+                    style="text-indent: 10px; width: calc(100% - 110px)"
+                    class="opening-hours"
+                    id="opening_hours"
+                    name="opening_hours"
+                    type="type"
+                    readonly
+                    value="请选择开业时间"
+                  />
+                </div>
+                <div class="form-item">
+                  <label class="base_flow_label" for=""
+                    >基础流量（人/日）：</label
+                  >
+                  <input
+                    style="width: calc(100% - 190px)"
+                    type="number"
+                    class="base-flow-rate"
+                    id="base_flow_rate"
+                    value=""
+                    name="base_flow_rate"
+                    placeholder="人数"
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="">经营业态：</label>
+                  <input
+                    style="width: calc(100% - 110px)"
+                    class="business-format"
+                    id="business_format"
+                    value=""
+                    name="business_format"
+                    placeholder="商家经营业态"
+                  />
+                </div>
+                <div class="form-item">
+                  <label style="width: 190px" for=""
+                    >操作人员身份证扫描件：</label
+                  >
+                </div>
+                <div class="form-item">
+                  <a
+                    href="javascript:;"
+                    id="operator_card_photo_front_a"
+                    class="a-upload operator-card-photo-front"
+                  >
+                    <input
+                      class="file-ipt"
+                      type="file"
+                      accept="image/*"
+                      value=""
+                      multiple
+                      onchange="uploadFile(this, 'operator_card_photo_front')"
+                    />
+                    <input
+                      type="hidden"
+                      id="operator_card_photo_front"
+                      name="operator_card_photo_front"
+                      value=""
+                    />
+                    <div
+                      id="operator_card_photo_front_container"
+                      class="container"
+                    >
+                      <span
+                        id="operator_card_photo_front_progress"
+                        class="progress"
+                      ></span>
+                    </div>
+                  </a>
+                  <a
+                    href="javascript:;"
+                    id="operator_card_photo_back_a"
+                    class="a-upload operator-card-photo-back"
+                  >
+                    <input
+                      class="file-ipt"
+                      type="file"
+                      accept="image/*"
+                      i
+                      multiple
+                      onchange="uploadFile(this, 'operator_card_photo_back')"
+                    />
+                    <input
+                      type="hidden"
+                      id="operator_card_photo_back"
+                      name="operator_card_photo_back"
+                      value=""
+                    />
+                    <div
+                      id="operator_card_photo_back_container"
+                      class="container"
+                    >
+                      <span
+                        id="operator_card_photo_back_progress"
+                        class="progress"
+                      ></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="form-item">
+                  <label style="width: 190px" for=""
+                    >店招和店内环境照片：</label
+                  >
+                </div>
+                <div class="form-item">
+                  <a
+                    href="javascript:;"
+                    id="environment1_a"
+                    class="a-upload environment1"
+                  >
+                    <input
+                      class="file-ipt"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      onchange="uploadFile(this, 'environment1')"
+                    />
+                    <input
+                      type="hidden"
+                      id="environment1"
+                      name="environment1"
+                      value=""
+                    />
+                    <div id="environment1_container" class="container">
+                      <span id="environment1_progress" class="progress"></span>
+                    </div>
+                  </a>
+                  <a
+                    href="javascript:;"
+                    id="environment2_a"
+                    class="a-upload environment2"
+                  >
+                    <input
+                      class="file-ipt"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      onchange="uploadFile(this, 'environment2')"
+                    />
+                    <input
+                      type="hidden"
+                      id="environment2"
+                      name="environment2"
+                      value=""
+                    />
+                    <div id="environment2_container" class="container">
+                      <span id="environment2_progress" class="progress"></span>
+                    </div>
+                  </a>
+                  <a
+                    href="javascript:;"
+                    id="environment3_a"
+                    class="a-upload environment3"
+                  >
+                    <input
+                      class="file-ipt"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      onchange="uploadFile(this, 'environment3')"
+                    />
+                    <input
+                      type="hidden"
+                      id="environment3"
+                      name="environment3"
+                      value=""
+                    />
+                    <div id="environment3_container" class="container">
+                      <span id="environment3_progress" class="progress"></span>
+                    </div>
+                  </a>
+                </div>
+              </form>
+              <div class="next-btn finish-fiexd">
+                <button class="next" id="add" type="button">完成</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" value="1231" id="business_id" />
+  </body>
+  <!-- <script src="LCalendar/js/LCalendar.min.js"></script> -->
+  <!-- <script>
+    let business_id   = window.location.search.slice(4);
+    console.log(url);
+</script> -->
+  <script src="./LCalendar/js/LCalendar.min.js"></script>
+  <script type="text/javascript">
+    var calendar = new LCalendar();
+    calendar.init({
+      trigger: "#opening_hours", //标签id
+      type: "date", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+      minDate: new Date().getFullYear() - 50 + "-" + 1 + "-" + 1, //最小日期
+      maxDate: new Date().getFullYear() + 5 + "-" + 12 + "-" + 31, //最大日期
+    });
+  </script>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var oS1 = document.getElementsByTagName("select");
+      let josn=[]
+      josn["安徽"] = [
+      "合肥",
+      "安庆",
+      "蚌埠",
+      "亳州",
+      "巢湖",
+      "池州",
+      "滁州",
+      "阜阳",
+      "淮北",
+      "淮南",
+      "黄山",
+      "六安",
+      "马鞍山",
+      "宿州",
+      "铜陵",
+      "芜湖",
+      "宣城",
+    ];
+    josn["澳门"] = ["澳门"];
+    josn["北京"] = [
+      "昌平",
+      "朝阳区",
+      "崇文",
+      "大兴",
+      "东城",
+      "房山",
+      "丰台",
+      "海淀",
+      "怀柔",
+      "门头沟",
+      "密云",
+      "平谷",
+      "石景山",
+      "顺义",
+      "通州区",
+      "西城",
+      "宣武",
+      "延庆",
+    ];
+    josn["福建"] = [
+      "福州",
+      "龙岩",
+      "南平",
+      "宁德",
+      "莆田",
+      "泉州",
+      "三明",
+      "厦门",
+      "漳州",
+    ];
+    josn["甘肃"] = [
+      "兰州",
+      "白银",
+      "定西",
+      "甘南",
+      "嘉峪关",
+      "金昌",
+      "酒泉",
+      "临夏",
+      "陇南",
+      "平凉",
+      "庆阳",
+      "天水",
+      "武威",
+      "张掖",
+    ];
+    josn["广东"] = [
+      "广州",
+      "潮州",
+      "东莞",
+      "佛山",
+      "河源",
+      "惠州",
+      "江门",
+      "揭阳",
+      "茂名",
+      "梅州",
+      "清远",
+      "汕头",
+      "汕尾",
+      "韶关",
+      "深圳",
+      "阳江",
+      "云浮",
+      "湛江",
+      "肇庆",
+      "中山",
+      "珠海",
+    ];
+    josn["广西"] = [
+      "桂林",
+      "百色",
+      "北海",
+      "崇左",
+      "防城港",
+      "贵港",
+      "河池",
+      "贺州",
+      "来宾",
+      "柳州",
+      "南宁",
+      "钦州",
+      "梧州",
+      "玉林",
+    ];
+    josn["贵州"] = [
+      "贵阳",
+      "安顺",
+      "毕节",
+      "六盘水",
+      "黔东南",
+      "黔南",
+      "黔西南",
+      "铜仁",
+      "遵义",
+    ];
+    josn["海南"] = [
+      "海口",
+      "白沙",
+      "保亭",
+      "昌江",
+      "澄迈",
+      "儋州",
+      "定安",
+      "东方",
+      "乐东",
+      "临高",
+      "陵水",
+      "南沙群岛",
+      "琼海",
+      "琼中",
+      "三亚",
+      "屯昌",
+      "万宁",
+      "文昌",
+      "五指山",
+      "西沙群岛",
+      "中沙群岛",
+    ];
+    josn["河北"] = [
+      "石家庄",
+      "保定",
+      "沧州",
+      "承德",
+      "邯郸",
+      "衡水",
+      "廊坊",
+      "秦皇岛",
+      "唐山",
+      "邢台",
+      "张家口",
+    ];
+    josn["河南"] = [
+      "郑州",
+      "安阳",
+      "鹤壁",
+      "焦作",
+      "济源",
+      "开封",
+      "洛阳",
+      "漯河",
+      "南阳",
+      "平顶山",
+      "濮阳",
+      "三门峡",
+      "商丘",
+      "新乡",
+      "信阳",
+      "许昌",
+      "周口",
+      "驻马店",
+    ];
+    josn["黑龙江"] = [
+      "哈尔滨",
+      "大庆",
+      "大兴安岭",
+      "鹤岗",
+      "黑河",
+      "鸡西",
+      "佳木斯",
+      "牡丹江",
+      "七台河",
+      "齐齐哈尔",
+      "双鸭山",
+      "绥化",
+      "伊春",
+    ];
+    josn["湖北"] = [
+      "武汉",
+      "鄂州",
+      "恩施",
+      "黄冈",
+      "黄石",
+      "荆门",
+      "荆州",
+      "潜江",
+      "神农架",
+      "十堰",
+      "随州",
+      "天门",
+      "仙桃",
+      "咸宁",
+      "襄樊",
+      "孝感",
+      "宜昌",
+    ];
+    josn["湖南"] = [
+      "长沙",
+      "常德",
+      "郴州",
+      "衡阳",
+      "怀化",
+      "娄底",
+      "邵阳",
+      "湘潭",
+      "湘西",
+      "益阳",
+      "永州",
+      "岳阳",
+      "张家界",
+      "株洲",
+    ];
+    josn["吉林"] = [
+      "长春",
+      "白城",
+      "白山",
+      "吉林",
+      "辽源",
+      "四平",
+      "松原",
+      "通化",
+      "延边",
+    ];
+    josn["江苏"] = [
+      "南京",
+      "常州",
+      "淮安",
+      "连云港",
+      "南通",
+      "苏州",
+      "宿迁",
+      "泰州",
+      "无锡",
+      "徐州",
+      "盐城",
+      "扬州",
+      "镇江",
+    ];
+    josn["江西"] = [
+      "南昌",
+      "抚州",
+      "赣州",
+      "吉安",
+      "景德镇",
+      "九江",
+      "萍乡",
+      "上饶",
+      "新余",
+      "宜春",
+      "鹰潭",
+    ];
+    josn["辽宁"] = [
+      "沈阳",
+      "鞍山",
+      "本溪",
+      "朝阳市",
+      "大连",
+      "丹东",
+      "抚顺",
+      "阜新",
+      "葫芦岛",
+      "锦州",
+      "辽阳",
+      "盘锦",
+      "铁岭",
+      "营口",
+    ];
+    josn["内蒙古"] = [
+      "呼和浩特",
+      "阿拉善",
+      "巴彦淖尔",
+      "包头",
+      "赤峰",
+      "鄂尔多斯",
+      "呼伦贝尔",
+      "通辽",
+      "乌海",
+      "乌兰察布",
+      "锡林郭勒",
+      "兴安",
+    ];
+    josn["宁夏"] = ["银川", "固原", "石嘴山", "吴忠", "中卫"];
+    josn["青海"] = [
+      "西宁",
+      "果洛",
+      "海北",
+      "海东",
+      "海南",
+      "海西",
+      "黄南",
+      "玉树",
+    ];
+    josn["山东"] = [
+      "济南",
+      "滨州",
+      "德州",
+      "东营",
+      "菏泽",
+      "济宁",
+      "莱芜",
+      "聊城",
+      "临沂",
+      "青岛",
+      "日照",
+      "泰安",
+      "威海",
+      "潍坊",
+      "烟台",
+      "枣庄",
+      "淄博",
+    ];
+    josn["山西"] = [
+      "太原",
+      "长治",
+      "大同",
+      "晋城",
+      "晋中",
+      "临汾",
+      "吕梁",
+      "朔州",
+      "忻州",
+      "阳泉",
+      "运城",
+    ];
+    josn["陕西"] = [
+      "西安",
+      "安康",
+      "宝鸡",
+      "汉中",
+      "商洛",
+      "铜川",
+      "渭南",
+      "咸阳",
+      "延安",
+      "榆林",
+    ];
+    josn["上海"] = [
+      "宝山",
+      "长宁",
+      "崇明",
+      "奉贤",
+      "虹口",
+      "黄浦",
+      "嘉定",
+      "金山",
+      "静安",
+      "卢湾",
+      "闵行",
+      "南汇",
+      "浦东",
+      "普陀",
+      "青浦",
+      "松江",
+      "徐汇",
+      "杨浦",
+      "闸北",
+    ];
+    josn["四川"] = [
+      "成都",
+      "阿坝",
+      "巴中",
+      "达州",
+      "德阳",
+      "甘孜",
+      "广安",
+      "广元",
+      "乐山",
+      "凉山",
+      "泸州",
+      "眉山",
+      "绵阳",
+      "内江",
+      "南充",
+      "攀枝花",
+      "遂宁",
+      "雅安",
+      "宜宾",
+      "资阳",
+      "自贡",
+    ];
+    josn["台湾"] = [
+      "台北",
+      "阿莲",
+      "安定",
+      "安平",
+      "八德",
+      "八里",
+      "白河",
+      "白沙市",
+      "板桥",
+      "褒忠",
+      "宝山市",
+      "卑南",
+      "北斗",
+      "北港",
+      "北门",
+      "北埔",
+      "北投",
+      "补子",
+      "布袋",
+      "草屯",
+      "长宾",
+      "长治市",
+      "潮州市",
+      "车城",
+      "成功",
+      "城中区",
+      "池上",
+      "春日",
+      "刺桐",
+      "高雄",
+      "花莲",
+      "基隆",
+      "嘉义",
+      "苗栗",
+      "南投",
+      "屏东",
+      "台东",
+      "台南",
+      "台中",
+      "桃园",
+      "新竹",
+      "宜兰",
+      "彰化",
+    ];
+    josn["天津"] = [
+      "宝坻",
+      "北辰",
+      "大港",
+      "东丽",
+      "汉沽",
+      "和平",
+      "河北",
+      "河东",
+      "河西",
+      "红桥",
+      "蓟县",
+      "津南",
+      "静海",
+      "南开",
+      "宁河",
+      "塘沽",
+      "武清",
+      "西青",
+    ];
+    josn["西藏"] = ["拉萨", "阿里", "昌都", "林芝", "那曲", "日喀则", "山南"];
+    josn["香港"] = [
+      "北区",
+      "大埔区",
+      "东区",
+      "观塘区",
+      "黄大仙区",
+      "九龙",
+      "葵青区",
+      "离岛区",
+      "南区",
+      "荃湾区",
+      "沙田区",
+      "深水?肚?",
+      "屯门区",
+      "湾仔区",
+      "西贡区",
+      "香港",
+      "新界",
+      "油尖旺区",
+      "元朗区",
+      "中西区",
+    ];
+    josn["新疆"] = [
+      "乌鲁木齐",
+      "阿克苏",
+      "阿拉尔",
+      "阿勒泰",
+      "巴音郭楞",
+      "博尔塔拉",
+      "昌吉",
+      "哈密",
+      "和田",
+      "喀什",
+      "克拉玛依",
+      "克孜勒苏柯尔克孜",
+      "石河子",
+      "塔城",
+      "图木舒克",
+      "吐鲁番",
+      "五家渠",
+      "伊犁",
+    ];
+    josn["云南"] = [
+      "昆明",
+      "保山",
+      "楚雄",
+      "大理",
+      "德宏",
+      "迪庆",
+      "红河",
+      "丽江",
+      "临沧",
+      "怒江",
+      "曲靖",
+      "思茅",
+      "文山",
+      "西双版纳",
+      "玉溪",
+      "昭通",
+    ];
+    josn["浙江"] = [
+      "杭州",
+      "湖州",
+      "嘉兴",
+      "金华",
+      "丽水",
+      "宁波",
+      "衢州",
+      "绍兴",
+      "台州",
+      "温州",
+      "舟山",
+    ];
+    josn["重庆"] = [
+      "巴南",
+      "北碚",
+      "璧山",
+      "长寿",
+      "城口",
+      "大渡口",
+      "大足",
+      "垫江",
+      "丰都",
+      "奉节",
+      "涪陵",
+      "合川",
+      "江北",
+      "江津",
+      "九龙坡",
+      "开县",
+      "梁平",
+      "南岸",
+      "南川",
+      "彭水",
+      "綦江",
+      "黔江",
+      "荣昌",
+      "沙坪坝",
+      "石柱",
+      "双桥",
+      "铜梁",
+      "潼南",
+      "万盛",
+      "万州",
+      "巫山",
+      "巫溪",
+      "武隆",
+      "秀山",
+      "永川",
+      "酉阳",
+      "渝北",
+      "渝中",
+      "云阳",
+      "忠县",
+    ];
+    josn["其他"] = [
+      "阿根廷",
+      "埃及",
+      "爱尔兰",
+      "奥地利",
+      "奥克兰",
+      "澳大利亚",
+      "巴基斯坦",
+      "巴西",
+      "保加利亚",
+      "比利时",
+      "冰岛",
+      "朝鲜",
+      "丹麦",
+      "德国",
+      "俄罗斯",
+      "法国",
+      "菲律宾",
+      "芬兰",
+      "哥伦比亚",
+      "韩国",
+      "荷兰",
+      "加拿大",
+      "柬埔寨",
+      "喀麦隆",
+      "老挝",
+      "卢森堡",
+      "罗马尼亚",
+      "马达加斯加",
+      "马来西亚",
+      "毛里求斯",
+      "美国",
+      "秘鲁",
+      "缅甸",
+      "墨西哥",
+      "南非",
+      "尼泊尔",
+      "挪威",
+      "葡萄牙",
+      "其它地区",
+      "日本",
+      "瑞典",
+      "瑞士",
+      "斯里兰卡",
+      "泰国",
+      "土耳其",
+      "委内瑞拉",
+      "文莱",
+      "乌克兰",
+      "西班牙",
+      "希腊",
+      "新加坡",
+      "新西兰",
+      "匈牙利",
+      "以色列",
+      "意大利",
+      "印度",
+      "印度尼西亚",
+      "英国",
+      "越南",
+      "智利",
+    ];
+      //josin做法
+     /* var josn = {
+        北京: ["北京市"],
+        天津: ["天津市"],
+        上海: ["上海市"],
+        重庆: ["重庆市"],
+        河北省: [
+          "石家庄市",
+          "唐山市",
+          "秦皇岛",
+          "邯郸",
+          "邢台市",
+          "保定市",
+          "张家口市",
+          "承德市",
+          "沧州市",
+          "廊坊市",
+          "衡水市",
+        ],
+        山西省: [
+          "太原市",
+          "大同市",
+          "阳泉市",
+          "长治市",
+          "晋城市",
+          "朔州市",
+          "晋中市",
+          "运城市",
+          "忻州市",
+          "临汾市",
+          "吕梁市",
+        ],
+        辽宁省: [
+          "沈阳市",
+          "大连市",
+          "鞍山市",
+          "抚顺市",
+          "本溪市",
+          "丹东市",
+          "锦州市",
+          "营口市",
+          "阜新市",
+          "辽阳市",
+          "铁岭市",
+          "朝阳市",
+          "盘锦市",
+          "葫芦岛市",
+        ],
+        吉林省: [
+          "长春市",
+          "吉林市",
+          "四平市",
+          "辽源市",
+          "通化市",
+          "白山市",
+          "松原市",
+          "白城市",
+        ],
+        黑龙江省: [
+          "哈尔滨市",
+          "齐齐哈尔市",
+          "鸡西市",
+          "鹤岗市",
+          "双鸭山市",
+          "大庆市",
+          "伊春市",
+          "佳木斯市",
+          "七台河市",
+          "牡丹江市",
+          "黑河市",
+          "绥化市",
+        ],
+        江苏省: [
+          "南京市",
+          "无锡市",
+          "徐州市",
+          "常州市",
+          "苏州市",
+          "南通市",
+          "连云港市",
+          "淮安市",
+          "盐城市",
+          "扬州市",
+          "镇江市",
+          "泰州市",
+          "宿迁市",
+        ],
+        浙江省: [
+          "杭州市",
+          "宁波市",
+          "温州市",
+          "嘉兴市",
+          "湖州市",
+          "绍兴市",
+          "金华市",
+          "衢州市",
+          "舟山市",
+          "台州市",
+          "丽水市",
+        ],
+        安徽省: [
+          "合肥市",
+          "芜湖市",
+          "蚌埠市",
+          "淮南市",
+          "马鞍山市",
+          "淮北市",
+          "铜陵市",
+          "安庆市",
+          "黄山市",
+          "滁州市",
+          "阜阳市",
+          "宿州市",
+          "六安市",
+          "亳州市",
+          "池州市",
+          "宣城市",
+        ],
+        福建省: [
+          "福州市",
+          "厦门市",
+          "莆田市",
+          "三明市",
+          "泉州市",
+          "漳州市",
+          "南平市",
+          "龙岩市",
+          "宁德市",
+        ],
+        江西省: [
+          "南昌市",
+          "景德镇市",
+          "萍乡市",
+          "九江市",
+          "新余市",
+          "鹰潭市",
+          "赣州市",
+          "吉安市",
+          "宜春市",
+          "抚州市",
+          "上饶市",
+        ],
+        山东省: [
+          "济南市",
+          "青岛市",
+          "淄博市",
+          "枣庄市",
+          "东营市",
+          "烟台市",
+          "潍坊市",
+          "济宁市",
+          "泰安市",
+          "威海市",
+          "日照市",
+          "临沂市",
+          "滨州市",
+          "菏泽市",
+        ],
+        河南省: [
+          "郑州市",
+          "开封市",
+          "洛阳市",
+          "平顶山市",
+          "安阳市",
+          "鹤壁市",
+          "新乡市",
+          "焦作市",
+          "濮阳市",
+          "许昌市",
+          "漯河市",
+          "三门峡市",
+          "南阳市",
+          "商丘市",
+          "信阳市",
+          "周口市",
+          "驻马店市",
+        ],
+        湖北省: [
+          "武汉市",
+          "黄石市",
+          "十堰市",
+          "宜昌市",
+          "襄阳市",
+          "鄂州市",
+          "荆门市",
+          "孝感市",
+          "荆州市",
+          "黄冈市",
+          "咸宁市",
+          "随州市",
+          "潜江市",
+        ],
+        湖南省: [
+          "长沙市",
+          "株洲市",
+          "湘潭市",
+          "衡阳市",
+          "邵阳市",
+          "岳阳市",
+          "常德市",
+          "张家界市",
+          "郴州市",
+          "益阳市",
+          "永州市",
+          "怀化市",
+          "娄底市",
+        ],
+        广东省: [
+          "广州市",
+          "韶关市",
+          "深圳市",
+          "珠海市",
+          "汕头市",
+          "佛山市",
+          "江门市",
+          "湛江市",
+          "茂名市",
+          "肇庆市",
+          "惠州市",
+          "梅州市",
+          "汕尾市",
+          "河源市",
+          "阳江市",
+          "清远市",
+          "东莞市",
+          "中山市",
+          "潮州市",
+          "揭阳市",
+          "云浮市",
+        ],
+        海南省: ["三亚市", "海口市", "三沙市", "儋州市"],
+        四川省: [
+          "成都市",
+          "绵阳市",
+          "自贡市",
+          "攀枝花市",
+          "泸州市",
+          "德阳市",
+          "广元市",
+          "遂宁市",
+          "内江市",
+          "乐山市",
+          "南充市",
+          "眉山市",
+          "宜宾市",
+          "广安市",
+          "达州市",
+          "巴中市",
+          "雅安市",
+          "资阳市",
+        ],
+        贵州省: [
+          "贵阳市",
+          "六盘水市",
+          "遵义市",
+          "安顺市",
+          "毕节市",
+          "铜仁市",
+          "黔南布依族苗族自治区",
+        ],
+        云南省: [
+          "昆明市",
+          "曲靖市",
+          "玉溪市",
+          "保山市",
+          "昭通市",
+          "丽江市",
+          "普洱市",
+          "临沧市",
+        ],
+        陕西省: [
+          "西安",
+          "宝鸡市",
+          "咸阳市",
+          "铜川市",
+          "渭南市",
+          "延安市",
+          "榆林市",
+          "汉中市",
+          "安康市",
+          "商洛市",
+        ],
+        甘肃省: [
+          "兰州市",
+          "嘉峪关市",
+          "金昌市",
+          "白银市",
+          "天水市",
+          "武威市",
+          "张掖市",
+          "平凉市",
+          "酒泉市",
+          "庆阳市",
+          "定西市",
+          "陇南市",
+        ],
+        青海省: ["西宁市", "海东市", "德令哈市", "格尔木市", "玉树市"],
+        台湾省: ["台湾省"],
+        香港特别行政区: ["香港"],
+        内蒙古自治区: [
+          "呼和浩特市",
+          "包头市",
+          "乌海市",
+          "赤峰市",
+          "通辽市",
+          "鄂尔多斯市",
+          "呼伦贝尔市",
+          "巴彦淖尔市",
+          "乌兰察布市",
+        ],
+        广西壮族自治区: [
+          "南宁市",
+          "柳州市",
+          "桂林市",
+          "梧州市",
+          "北海市",
+          "防城港市",
+          "钦州市",
+          "贵港市",
+          "玉林市",
+          "百色市",
+          "贺州市",
+          "河池市",
+          "来宾市",
+          "崇左市",
+        ],
+        西藏自治区: [
+          "拉萨市",
+          "日喀则市",
+          "昌都市",
+          "林芝市",
+          "山南市",
+          "那曲市",
+        ],
+        宁夏回族自治区: ["银川市", "石嘴山市", "吴忠市", "固原市", "中卫市"],
+        新疆维吾尔族自治区: ["乌鲁木齐市", "吐鲁番市", "哈密市", "克拉玛依市"],
+      };
+      */
+
+      for (attr in josn) {
+        oS1[0].innerHTML +=
+          '<option value="' + attr + '">' + attr + "</option>";
+        oS1[2].innerHTML +=
+          '<option value="' + attr + '">' + attr + "</option>";
+      }
+      oS1[0].onchange = function () {
+        oS1[1].innerHTML = "<option>城市</option>";
+        for (attr in josn) {
+          if (oS1[0].value == attr) {
+            for (var i = 0; i < josn[attr].length; i++)
+              oS1[1].innerHTML +=
+                '<option value="' +
+                josn[attr][i] +
+                '">' +
+                josn[attr][i] +
+                "</option>";
+          }
+        }
+      };
+      oS1[2].onchange = function () {
+        oS1[3].innerHTML = "<option>城市</option>";
+        for (attr in josn) {
+          if (oS1[2].value == attr) {
+            for (var i = 0; i < josn[attr].length; i++)
+              oS1[3].innerHTML +=
+                '<option value="' +
+                josn[attr][i] +
+                '">' +
+                josn[attr][i] +
+                "</option>";
+          }
+        }
+      };
+    };
+  </script>
+  <script>
+    //  console.log(window.location.search());
+    // 选择文件
+    function fileSelected() {
+      var file = document.getElementById("file").files[0];
+      if (file) {
+        var fileSize = 0;
+        if (file.size > 1024 * 1024)
+          fileSize =
+            (Math.round((file.size * 100) / (1024 * 1024)) / 100).toString() +
+            "MB";
+        else
+          fileSize =
+            (Math.round((file.size * 100) / 1024) / 100).toString() + "KB";
+        document.getElementById("fileName").innerHTML = "Name: " + file.name;
+        document.getElementById("fileSize").innerHTML = "Size: " + fileSize;
+        document.getElementById("fileType").innerHTML = "Type: " + file.type;
+      }
+    }
+
+    // 获取url地址
+    function getObjectURL(file) {
+      console.log("----------------", file);
+      var url = null;
+      // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
+      if (window.createObjectgitURL != undefined) {
+        // basic
+        url = window.createObjectURL(file);
+      } else if (window.URL != undefined) {
+        // mozilla(firefox)
+        url = window.URL.createObjectURL(file);
+      } else if (window.webkitURL != undefined) {
+        // webkit or chrome
+        url = window.webkitURL.createObjectURL(file);
+      }
+      return url;
+    }
+
+    // 是否上传完成: 避免多个图片同时上传
+    var isUploadComplete = true;
+    // 选择progressId
+    var selectId = "";
+    // 上传图片路径
+    var newsrc = "";
+
+    // 上传注册的id
+    var business_id = window.location.search.slice(4);
+    // 上传文件
+    function uploadFile(obj, id) {
+      // console.log(obj,id);
+      if (!isUploadComplete) return layertest("请等待上一张图片上传完成");
+
+      var fileObj = obj.files[0];
+
+      var fd = new FormData();
+      newsrc = getObjectURL(fileObj);
+      console.log(newsrc);
+      fd.append("file", fileObj);
+      selectId = id;
+      var xhr = new XMLHttpRequest();
+
+      xhr.upload.addEventListener("progress", uploadProgress, false);
+      xhr.addEventListener("load", uploadComplete, false);
+      xhr.addEventListener("error", uploadFailed, false);
+      xhr.addEventListener("abort", uploadCanceled, false);
+      xhr.open(
+        "POST",
+         "https://sub.admin.longyaoapp.com/index.php/common.Upload/uploadImage",
+        // "/common.Upload/uploadImage",
+        true
+      );
+      // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      // res.header("Access-Control-Allow-Origin", "  /common.Upload/uploadImage");
+      // xhr.open("POST", "http://shlysmkj.com/thc/upload");
+      xhr.send(fd);
+    }
+
+    function uploadProgress(evt) {
+      var progressId = selectId + "_progress";
+      if (evt.lengthComputable) {
+        var percent = Math.round((evt.loaded * 100) / evt.total);
+        document.getElementById(progressId).innerHTML =
+          percent === 100 ? "上传中" : percent.toFixed(2) + "%";
+        document.getElementById(progressId).style.backgroundColor =
+          percent === 100 ? "transparent" : "#00AAFB";
+        document.getElementById(progressId).style.width =
+          percent.toFixed(2) + "%";
+
+        if (percent === 100) {
+          //document.getElementById(selectId).style.background = "url(" + newsrc + ") no-repeat center center";
+          //document.getElementById(selectId).style.backgroundSize = "100% 100%";
+        }
+      } else {
+        document.getElementById(progressId).innerHTML = "上传失败";
+      }
+    }
+
+    function uploadComplete(evt) {
+      /* 服务器端返回响应时候触发event事件*/
+      console.log(evt);
+      isUploadComplete = true;
+      // 如果上传图片不成功
+      if (evt.target.status !== 200) {
+        var progressId = selectId + "_progress";
+        document.getElementById(progressId).innerHTML = "上传失败";
+        return;
+      }
+      console.log(evt.target.status);
+      console.log(newsrc);
+      // 上传图片成功
+      var result = JSON.parse(evt.target.response);
+      progressId = selectId + "_progress";
+      if (result.code === 1) {
+        // 进度状态
+        document.getElementById(progressId).innerHTML = "上传成功";
+        // 显示上传图片
+        document.getElementById(selectId + "_a").style.background =
+          "url(" + newsrc + ") no-repeat center center";
+        document.getElementById(selectId + "_a").style.backgroundSize =
+          "100% 100%";
+        // 设置图片路径
+        var selectDomId = "#" + selectId;
+        // console.log(selectDomId)
+        // console.log(result)
+        $(selectDomId).val(result.msg.url);
+        // console.log($(selectDomId).val())
+      } else {
+        document.getElementById(progressId).innerHTML = "上传失败";
+        layertest(result.msg);
+      }
+    }
+    // 上传失败
+    function uploadFailed(evt) {
+      var result = JSON.parse(evt.target.response);
+      layertest(result.msg);
+    }
+
+    // 取消上传
+    function uploadCanceled(evt) {
+      var result = JSON.parse(evt.target.response);
+      layertest(result.msg);
+    }
+
+    // 显示添加分店弹框
+    function showAddShopPopup() {
+      setPopupFormNormalValue();
+      document.getElementById("popup_box").style.display = "block";
+    }
+
+    // 隐藏添加分店弹框
+    function closeAddShopPopup() {
+      setPopupFormNormalValue();
+      document.getElementById("popup_box").style.display = "none";
+    }
+
+    // 默认添加分店表单值
+    var normal_values = {
+      shop_branch_name: "",
+      provinceS: "省份",
+      cityS: "城市",
+      addressS: "",
+      start_time: "09:00",
+      end_time: "17:00",
+      employee_num: "",
+  
+      area: "",
+      opening_hours: "2023-01-01",
+      base_flow_rate: "",
+      business_format: "",
+      operator_card_photo_front: "img/操作员身份证正面.png",
+      operator_card_photo_back: "img/操作员身份证背面.png",
+      environment1: "img/店招照片.png",
+      environment2: "img/店内环境1.png",
+      environment3: "img/店内环境2.png",
+    };
+
+    // 置表单默认值
+    function setPopupFormNormalValue() {
+      for (const key in normal_values) {
+        if (
+          key === "operator_card_photo_front" ||
+          key === "operator_card_photo_back" ||
+          key === "environment1" ||
+          key === "environment2" ||
+          key === "environment3"
+        ) {
+          // 上传状态修改
+          var progressId = key + "_progress";
+          document.getElementById(progressId).innerHTML = "";
+          // 修改默认展位图
+          document.getElementById(key + "_a").style.background =
+            "url(" + normal_values[key] + ") no-repeat center center";
+          document.getElementById(key + "_a").style.backgroundSize =
+            "100% 100%";
+          // 图片路径值为空
+          $("#" + key + "").val();
+        } else {
+          $("#" + key + "").val(normal_values[key]);
+        }
+      }
+    }
+
+    // 分店校验
+    var shop_branch_info = {
+      shop_branch_name: "请输入门店名称",
+      provinceS: "请选择省份",
+      cityS: "请选择城市",
+      addressS: "请填写地址",
+      start_time: "请选择营业开始时间",
+      end_time: "请选择营业结束时间",
+      employee_num: "请输入当前员工人数",
+      area: "请输入门店平方面积",
+      opening_hours: "请选择开业时间",
+      base_flow_rate: "请输入基础人流量",
+      business_format: "请输入经营业态",
+      operator_card_photo_front: "请上传操作人员身份证正面照片",
+      operator_card_photo_back: "请上传操作人员身份证背面照片",
+      environment1: "请上传店招照片",
+      environment2: "请上传店内照片1",
+      environment3: "请上传店内照片2",
+    };
+
+    // 分店信息
+    var shop_branchs = [];
+    // 添加、编辑分店
+    $("#add").click(function () {
+      // console.log(normal_values);
+      // 校验添加分店信息
+      var shop_branch = {};
+      for (const key in shop_branch_info) {
+        var temp = $("#" + key + "").val();
+        console.log(temp,"校验");
+        if (!temp || temp === "省份" || temp === "城市")
+          return layertest(shop_branch_info[key]);
+        shop_branch[key] = temp;
+      }
+      shop_branchs.push(shop_branch);
+
+      // 显示分店列表
+      showShopBranchList();
+      // 关闭添加分店弹框
+      closeAddShopPopup();
+    });
+
+    // 显示分店列表
+    showShopBranchList = () => {
+      // 遍历分店显示
+      var shop_branchs_box = document.getElementById("shop_branchs_box");
+      // 清空内容
+      shop_branchs_box.innerHTML = null;
+      // 遍历展示分店
+      shop_branchs.map((shop_branch, index) => {
+        shop_branchs_box.innerHTML +=
+          '<div class="form-item"><div class="shop-box"><div class="img-box"><img src="https://l.src.xiaohuolongfujiankeji.com' +
+          shop_branch.environment1 +
+          '" alt=""></div><div class="des-box"><div class="title-box"><span class="name">店名：</span><span class="des">' +
+          shop_branch.shop_branch_name +
+          '</span></div><div class="address-box"><span class="name">地址：</span><span class="des">' +
+          shop_branch.provinceS +
+          shop_branch.cityS +
+          shop_branch.addressS +
+          '</span></div></div><div class="close" onclick="deleteShopBranch(' +
+          index +
+          ')">x</div></div></div>';
+      });
+    };
+
+    // 删除分店信息
+    deleteShopBranch = (key) => {
+      // 筛选删除的分店信息
+      shop_branchs = shop_branchs.filter((shop_branch, index) => {
+        return Number(index) !== Number(key);
+      });
+
+      // 重新渲染分店列表
+      showShopBranchList();
+    };
+
+    // 商家信息校验
+    var shopInfo = {
+      shop_name: "请输入品牌名称",
+      shop_liasion: "请输入联系人姓名",
+      phone: "请输入联系人电话",
+      // 'business_license': '请上传营业执照照片',
+      idnum:"请填写身份证号码",
+      province: "请选择省份",
+      city:"请选择城市",
+      address: "请填写地址",
+      bus_license_phone: "请上传营业执照照片",
+      boss_card_photo_front: "请上传法人身份证面照片",
+      boss_card_photo_back: "请上传法人身份证背面照片",
+    };
+
+    // 提交申请
+    $("#applyJoin").click(function () {
+      // 校验商家信息
+      var shop_info = {};
+      // console.log($('#bus_license_phone').val())
+      // console.log($('#bus_license_phone_a').val())
+      for (const key in shopInfo) {
+        var temp = $("#" + key + "").val();
+        console.log(temp)
+        if (!temp) return layertest(shopInfo[key]);
+        shop_info[key] = temp;
+      }
+
+      // 校验手机号
+      var phone = $("#phone").val();
+      if (!/^1[3456789]\d{9}$/.test(phone)) {
+        return layertest("请输入正确手机号");
+      }
+      // 校验分店列表至少有一个
+      if (shop_branchs.length === 0) return layertest("至少添加一个分店");
+
+      // 获取business_id
+      // var business_id = $('#business_id').val();
+      var idnum = $("#idnum").val();
+      if (!/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idnum)) {
+        return layertest("请输入正确身份证号码");
+      }
+      var data = { ...shop_info, business_id, shop_branchs };
+      console.log(data);
+      $.ajax({
+        type: "POST",
+        dataType: "JSON",
+  url: "https://sub.admin.longyaoapp.com/index.php/Home/register",
+        // url: "/Home/register",
+        data: data,
+        error: function (data) {},
+        success: function (data) {
+          console.log(data);
+          if (data.code === 1) {
+            layertest("已成功提交申请");
+            shop_branchs = [];
+            shop_info = {};
+            // 页面刷新
+            setTimeout(() => {
+              window.location.reload();
+            }, 100);
+
+
+          } else {
+            layertest(data.msg);
+          }
+        },
+      });
+    });
+  </script>
+</html>

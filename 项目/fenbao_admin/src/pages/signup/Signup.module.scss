@@ -1,0 +1,58 @@
+.root {
+
+    :global { 
+        input::-webkit-outer-spin-button,            input::-webkit-inner-spin-button{                -webkit-appearance: none !important;          }
+        input[type="number"]{
+            -moz-appearance: textfield;
+        }
+        .herder{
+            height: 64px;
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px solid #ebebeb;
+            height: 65px;
+    padding-left: 48px;
+    padding-right: 48px;
+    display: flex;
+    -webkit-box-align: center;
+    background-color: #fff;
+    box-shadow: none;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 399;
+line-height: 64px;
+margin-bottom: 20px;
+
+    img{
+        width: 50px;
+    }
+        }
+        .ant-col-24{
+            margin-top: 80px;
+        }
+        .ant-pro-steps-form{
+
+            width:680px;
+            height: 700px;
+
+        }
+        .ant-pro{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+            background-color: rgb(255,255,255);
+        }
+     
+    
+    }
+//flex上下
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;  
+    background-color: rgb(248,249,249);  
+  
+}

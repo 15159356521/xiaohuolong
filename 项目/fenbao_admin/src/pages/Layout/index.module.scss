@@ -1,0 +1,200 @@
+.root {
+  :global {
+    .ant-menu ant-menu-root ant-menu-inline {
+      overflow: scroll;
+      // background-color: red;
+    }
+    .ant-layout-sider {
+      z-index: 1;
+      //    top: 200px;
+    }
+    .ant-layout-sider {
+      background-color: rgb(255, 255, 255);
+    }
+    .site-layout-background {
+      display: flex;
+      justify-content: space-between;
+
+      overflow: auto;
+      // 隐藏滚动条
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      background-color: rgb(255, 255, 255);
+    }
+    .aside {
+      height: 95vh;
+
+      overflow: auto;
+      overflow-x: auto;
+      //   隐藏滚动条
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      ::-webkit-scrollbar {
+        width: 0px;
+        display: none;
+      }
+    }
+    #components-layout-demo-custom-trigger .trigger:hover {
+      color: #1890ff;
+    }
+
+    .site-layout-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: #fff;
+    }
+
+    #components-layout-demo-custom-trigger .logo {
+      height: 32px;
+      margin: 16px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .logoWrapper {
+      display: flex;
+      width: 200px;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      .logoPic {
+        width: 25px;
+      }
+      p {
+        font-weight: bold;
+        margin-top: 15px;
+      }
+      .trigger {
+        margin-bottom: 15px;
+        display: none;
+        cursor: pointer;
+        font-size: 22px;
+      }
+    }
+
+    .ant-layout-content {
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .contentWrapper {
+      position:fixed;
+      margin:65px 1px 0 200px;
+      min-height:280px;
+      padding-bottom: 50px;
+      background-color: #f0f2f5;
+      height: 100vh !important;
+      color: #000;
+      display: flex;
+
+      padding-left: 140px !important;
+      // 隐藏滚动条
+      height: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      ::-webkit-scrollbar {
+        width: 0px;
+        display: none;
+      }
+    }
+    // @media (max-width: 991px) {
+    //     .menuWrapper {
+    //         width: 40px !important;
+    //         .ant-menu-item {
+    //             justify-content: center !important;
+    //         }
+    //     }
+    //     .contentWrapper {
+        
+    //         padding-left: 40px !important;
+    //         transition: all 0.4;
+    //         -webkit-transition: all 0.4;
+    //         -moz-transition: all 0.4;
+    //         -ms-transition: all 0.4;
+    //         -o-transition: all 0.4;
+    //     }
+    //     .ant-menu-submenu-arrow {
+    //         display: none;
+    //     }
+    //     .ant-menu-submenu-title {
+    //         justify-content: center !important;
+    //     }
+    //     .ant-menu-sub.ant-menu-inline  {
+    //        height: 0 !important;
+    //     }
+    //     .ant-menu-item {
+    //         display: none !important;
+    //     }
+    // }
+
+    // @media (max-width: 767px) {
+    //     .logoWrapper {
+    //         width: 190px;
+    //         padding-left: 20px;
+    //         .logoPic {
+    //             width: 25px;
+    //         }
+    //         p {
+    //             font-weight: bold;
+    //         }
+    //         .logoInfo {
+    //             display: block;
+    //         }
+    //         .trigger {
+    //             display: none !important;
+    //         }
+    //     }
+    //     .ant-menu-submenu-arrow {
+    //         display: none;
+    //     }
+    //     .ant-menu-submenu-title {
+    //         justify-content: center !important;
+    //     }
+    //     .ant-menu-item {
+    //         display: none !important;
+    //     }
+    // }
+
+    @media (max-width: 520px) {
+        .logoWrapper {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           min-width: 90px  !important;
+            padding-left: 20px;
+            .logoPic {
+                width: 25px;
+
+                margin-bottom: 15px;
+            }
+            p {
+                font-weight: bold;
+            }
+            .logoInfo {
+                display: none;
+            }
+            .trigger {
+                display: block !important;
+            }
+        }
+        .menuWrapper {
+            left: -40px
+        }
+        .contentWrapper {
+          margin:65px 1px 0 0px !important;
+            padding-left: 10px !important;
+            transition: all 0.4;
+            -webkit-transition: all 0.4;
+            -moz-transition: all 0.4;
+            -ms-transition: all 0.4;
+            -o-transition: all 0.4;
+        }
+
+    }
+  }
+}

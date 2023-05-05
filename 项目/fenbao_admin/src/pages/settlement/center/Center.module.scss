@@ -1,0 +1,28 @@
+.main{
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    margin-top: 40px;
+    height: 100vh;
+    text-align: center;
+    background-color: #fff;
+    // border-radius: 8%;
+    :global{
+    .center{
+        margin-top: 100px;
+    }
+    
+            
+}
+    p{
+    margin-top: 30px;  
+    color: #8e9aa9;  
+    }
+    li{
+        color: #8e9aa9;
+        margin-top: 20px;
+    }
+    
+
+
+}

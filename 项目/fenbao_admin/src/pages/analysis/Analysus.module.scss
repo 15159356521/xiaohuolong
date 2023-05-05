@@ -1,0 +1,60 @@
+.root {
+  width: 1200px;
+  height: 100vh ;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    width:0px;
+    display: none;
+  }
+  :global {
+    .herder {
+      height: 36px;
+      width: 1080px;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+      margin-top: 40px;
+      margin-left: -40px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      .herLeft {
+        display: flex;
+        align-items: flex-start;
+      }
+      .herMid{
+        .ant-space-vertical{
+          display: flex;
+      
+          flex-flow: row;
+        }
+      }
+      .herRig{
+        display: flex;
+        align-items: flex-start;
+        .ant-pro-form{
+          display: flex;
+          justify-content: center;
+          .ant-form-item-control-input-content{
+              margin-top: 25px;
+              margin-right: 20px;
+         
+
+            }
+        } 
+
+      }
+    }
+  }
+  width: 1080px; 
+  height: 820px;
+  background: #fff;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  // justify-content: s;
+  padding: 30px 40px;
+  flex-flow: column;
+}

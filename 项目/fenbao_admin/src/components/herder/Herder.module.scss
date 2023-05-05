@@ -1,0 +1,30 @@
+.root {
+    :global {
+        .logoWrapper{
+                display: flex;
+                .logoInfo{
+                    font-size: 25px;
+                    font-weight: 600;
+                    color: rgb(12, 11, 11);
+                    margin-top: 5px;
+                    font-family: 楷体;
+
+                    // font: 24px "楷体"; 
+                }
+                .logoPic{
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+        }
+     
+    }
+    .logoWrapper{
+        display: flex;
+        .logoInfo{
+            position: fixed;
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.root {
+    width: 300px;
+    :global { 
+        .form {
+
+            .autoLogin {
+                width: 300px;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.root {
+    width: 1080px;
+    height: 100vh;
+    background-color: white;
+    // color: rgb(195, 178, 178);
+    :global{
+        .ant-steps-icon{
+            width: 50px;
+        }
+        .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+            color: #fff;
+        }
+        .ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+            color: #fff
+        }
+        .ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+            color: #fff
+        }
+        
+    .main-top{
+        width: 100%;
+        margin-top: 20px;
+        height: 100%;
+        background-color: #222222;
+       
+           .content-main{
+            width: 80%;
+            margin-left: 70px;
+           } 
+    //    .ant-steps ant-steps-horizontal content-main ant-steps-label-vertical{
+        
+    //    }
+        }
+    
+    .main-top img{
+        width: 100%;
+    } 
+}
+    
+  }
+  

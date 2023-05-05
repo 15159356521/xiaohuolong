@@ -1,0 +1,19 @@
+.root {
+  :global {
+    .ant-picker {
+      width: 266.6666px;
+    }
+    #nest-messages{
+      width: 400px;
+    }
+    @media (max-width: 575px)
+    {#nest-messages{
+       width: 162px !important;}
+      .ant-form .ant-form-item .ant-form-item-label, .ant-form .ant-form-item .ant-form-item-control {
+        flex: 0 0 100%;
+        max-width: 100% !important;}
+   
+       
+    }
+  }
+}

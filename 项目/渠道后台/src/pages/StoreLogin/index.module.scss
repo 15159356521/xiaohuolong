@@ -1,0 +1,29 @@
+.root {
+  :global {
+    .login {
+      background-color: #fff;
+      background-image: url("../../assets/bg.jpg");
+      width: 100vw;
+      height: 100vh;
+      // overflow: hidden;
+      // position: relative;
+      .logn-bbox {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background-color: #fff;
+        .login-box {
+          width: 300px;
+          // background-color: pink;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

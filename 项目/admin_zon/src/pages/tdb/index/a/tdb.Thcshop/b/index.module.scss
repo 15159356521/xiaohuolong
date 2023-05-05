@@ -1,0 +1,23 @@
+.root {
+    margin: 20px;
+    width: 100%;
+    height: 94vh;
+    overflow: auto;
+    padding-bottom: 75px;
+    :global {
+        .ant-upload-list-picture-card-container{
+            display: none !important;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        @media (max-width: 575px)
+        {
+          .filter {
+            width: 300px;
+          }
+        }
+    }
+}

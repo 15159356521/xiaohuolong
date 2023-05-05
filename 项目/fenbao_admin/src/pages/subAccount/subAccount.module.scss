@@ -1,0 +1,12 @@
+.table {
+  width: 1080px;
+  // height: 1800px;
+  // height: 50px;
+  text-align: center;
+  margin-top: 100px;
+  :global {
+    .ant-form-item-control-input-content {
+      margin-top: 20px;
+    }
+  }
+}

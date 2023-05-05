@@ -1,0 +1,140 @@
+.root {
+  :global {
+    .ant-pro-card-body{
+      padding-bottom: 120px;
+      min-height: 600px;
+    }
+    .pag{
+      display: flex;
+      flex-flow: row-reverse;
+    }
+
+    .crowding {
+      display: flex;
+      flex-flow: row wrap;
+      width: 1080px;
+      margin-bottom: 40px;
+      .filter {
+        width: 525px;
+        padding: 0;
+        background: #fff;
+        display: flex;
+        .filLeft {
+          width: 47px;
+          margin-right: 15px;
+          color: #999;
+          line-height: 28px;
+          font-weight: 600;
+        }
+        .filRight {
+          display: flex;
+          justify-content: space-around;
+          // width: 40%;
+          .ant-radio-button-wrapper:first-child {
+            border-left: 0;
+          }
+          .ant-radio-button-wrapper:not(:first-child):before{
+            border: 0;
+            width: 0;
+          }
+          .ant-radio-button-wrapper {
+            border: 0;
+            border-radius:5px
+          }
+        }
+      }
+    }
+
+    .spin{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+    }
+    .list {
+      display: flex;
+      overflow: hidden;
+      justify-content: space-between;
+      max-width: 100%;
+      .listLife {
+        width: 160px;
+        height: 108px;
+        margin-right: 20px;
+        flex-shrink: 0;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      }
+      .listRight {
+        color: #222;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 800px;
+        height: 160px;
+        .herder {
+          line-height: 22px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .content {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          word-wrap: break-word;
+          word-break: break-all;
+          min-height: 40px;
+          max-height: 40px;
+          line-height: 20px;
+          margin-top: 8px;
+          font-size: 14px;
+          color: #666;
+          white-space: normal;
+        }
+        .foot {
+          margin-top: 16px;
+          line-height: 20px;
+          color: #999;
+          display: flex;
+          line-height: 20px;
+          justify-content: space-between;
+          .footRight {
+            width: 60%;
+            color: #222;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            span {
+              display: inline-flex;
+              align-items: center;
+              
+            }
+            .bonus{
+                color: red;
+          }
+          span:before{
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            border-right: 1px solid #E7E7E7;
+            margin: 0 8px;
+          }
+          }
+        }
+      }
+    }
+  }
+  width: 1080px;
+  height: 100%;
+  border-radius: 50px;
+  margin-top: 20px;
+
+}

@@ -1,0 +1,200 @@
+.root {
+  background-color: #fff;
+  height: 2500px;
+  width: 1240px;
+  margin-bottom: 36px;
+  margin-top: 36px;
+  border-radius: 20px;
+  :global {
+    .ant-pagination {
+      text-align: right;
+    }
+    .ant-radio-button-wrapper:first-child {
+      border-left: 0;
+    }
+    .ant-radio-button-wrapper {
+      border: 0;
+    }
+    .ant-radio-button-wrapper:first-child {
+      border-left: 0;
+    }
+    .ant-radio-button-wrapper:not(:first-child):before {
+      border: 0;
+      width: 0;
+    }
+    .ant-card-meta-title {
+      font-weight: 600;
+    }
+    .panel {
+      position: relative;
+      padding: 30px 40px;
+      background: #fff;
+      border-radius: 8px;
+      // .listLeftTitle{
+      //   color: red;
+      // }
+      .alert {
+        color: #222;
+        border: solid 1px #dfe9f5;
+        background: #edf3fa;
+        padding: 11px 15px;
+        border-radius: 4px;
+        position: relative;
+        margin: 20px 0;
+        box-sizing: border-box;
+        display: table;
+        width: 980px;
+        .alertLeft {
+          display: table-cell;
+          position: relative;
+          z-index: 4;
+          vertical-align: top;
+          white-space: nowrap;
+          width: 20px;
+          .icon {
+            background-size: contain;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+          }
+          .textTitle {
+            color: #444;
+            font-weight: 400;
+            display: inline-block;
+          }
+        }
+        .alertRight {
+          overflow: hidden;
+          position: relative;
+          z-index: 4;
+          display: table-cell;
+          vertical-align: top;
+          padding-left: 10px;
+          text-align: left;
+        }
+      }
+      .content {
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: space-around;
+      }
+      .content > div {
+        width: 24%;
+        padding: 0 10px;
+        .listData {
+          display: flex;
+          flex-flow: column;
+          .list {
+            width: 90%;
+            .listLeft {
+              display: flex;
+              flex-flow: row;
+              justify-content: space-between;
+            }
+          }
+        }
+      }
+    }
+    .main {
+      margin-left: 60px;
+      // width: 1080px;
+      // height: 100vh;
+
+      .mainlevel {
+        display: table;
+        .radiolevel {
+          display: table-cell;
+        }
+        .make {
+          display: table-cell;
+
+          padding-left: 180px;
+          p {
+            color: #999;
+            font-size: 16px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .mainscore {
+        display: table;
+        .hot {
+          display: table-cell;
+          padding-left: 90px;
+          p {
+            color: #999;
+            font-size: 16px;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .filter {
+        width: 1000px;
+        background: #fff;
+        padding: 0;
+        margin: 20px 0;
+        display: flex;
+        .pullLeft {
+          color: #999;
+          line-height: 28px;
+          font-weight: 600;
+          float: none !important;
+        }
+      }
+      .filRight {
+        margin-left: 20px;
+        float: left;
+        margin-bottom: -10px;
+        border: 0;
+      }
+    }
+    .mainsearch {
+      display: flex;
+      // margin-left: 60px;
+      // background-color: red;
+    }
+
+    .bottom {
+      // height: 100vh;
+      // display: flex;
+      .carddiv {
+        // background-color: red;
+        //  width: 200px;
+        //  height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        //  flex-wrap: wrap-reverse;
+        .ant-card {
+          margin-left: 40px;
+          width: 200px;
+          height: 450px;
+          margin-top: 5px;
+        }
+        .ant-card-meta {
+          // background-color: red;
+          text-align: left;
+        }
+        .spin {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 400px;
+        }
+      }
+      .bottommeta {
+        p {
+          text-align: left;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

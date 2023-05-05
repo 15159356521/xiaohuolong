@@ -1,0 +1,109 @@
+import React, { useEffect, useRef, useState } from 'react'
+import { Button, Checkbox, Form, Input, Image } from "antd";
+import classnames from 'classnames'
+import { UserOutlined, LockOutlined, FileOutlined } from '@ant-design/icons';
+
+
+import styles from './index.module.scss'
+import OhterLoign from '../../../components/OtherLogin'
+import { useNavigate } from 'react-router-dom';
+import { useGetCodeImgQuery } from '../../../store/api/authApi';
+import axios from 'axios';
+import { useImperativeHandle } from 'react';
+
+export default function PwdLogin(props) {
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
+ 
+    const [codeUrl, setCodeUrl] = useState('')
+    const getImgCode = async (t) => {
+        const res = await axios.get(`/Home/verify?t=${Date.now()}`, {responseType: 'arraybuffer'})
+        let codeurl = `data: image/jpeg;base64,${btoa(new Uint8Array(res.data).reduce((data, byte) => data + String.fromCharCode(byte), ''))}`
+        setCodeUrl(codeurl)
+        console.log(res);
+    }
+    const [autoLogin, setAutoLogin] = useState(true)
+    useImperativeHandle(props.onRef,()=>{
+       return {
+           getImgCode
+       }
+    })
+    useEffect(() => {
+        getImgCode()
+    }, [])
+    // console.log(res)
+
+    const pwdForm = useRef()
+
+    const onFinish = (values) => {
+        const { pwdLogin } = props
+        pwdForm.current.validateFields()
+        pwdLogin(values)
+    };
+    
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
+
+    const autoLoginFn = () => {
+        
+    }
+
+    return (
+        <Form ref={pwdForm} className={classnames('form', styles.root)} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+            <Form.Item
+                name="phone"
+                rules={[
+                    {
+                        required: true,
+                        message: "手机号不能为空!",
+                        trigger: 'blur'
+                    },
+                    /* {
+                        required: true,
+                        message: "手机号格式不正确!",
+                        pattern: /^\d{11}$/,
+                        // pattern: /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/ ,
+                        trigger: 'blur'
+                    } */
+
+                ]}
+            >
+                <Input placeholder="请输入手机号" prefix={<UserOutlined className="site-form-item-icon" />}/>
+            </Form.Item>
+
+            <Form.Item
+                name="pwd"
+                rules={[
+                    {
+                        required: true,
+                        message: "密码长度不符合要求",
+                        min: 6
+                    },
+                ]}
+                >
+                <Input.Password placeholder="请输入密码" prefix={<LockOutlined className="site-form-item-icon"/>}/>
+            </Form.Item>
+
+            {/* <div className='code'>
+                <Form.Item className='code' name="code" rules={[{required: true, message: '请输入验证码'},{len: 4, message: '验证码长度不符合要求'}]}>
+                    <Input prefix={<FileOutlined />} placeholder='请输入验证码'/>
+                </Form.Item>
+                <img src={codeUrl} onClick={() => getImgCode(Date.now())}/>
+            </div> */}
+
+            <Form.Item className="autoLogin">
+                <Checkbox checked={autoLogin} onChange={autoLoginFn}>自动登录</Checkbox>
+                <a style={{float: 'right'}}>忘记密码？</a>
+            </Form.Item>
+
+            <Form.Item>
+                <Button block type="primary" htmlType="submit" loading={loading}>
+                    登录
+                </Button>
+            </Form.Item>
+
+            {/* <OhterLoign /> */}
+        </Form>
+    )
+}

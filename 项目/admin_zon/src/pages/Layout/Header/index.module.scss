@@ -1,0 +1,76 @@
+.root {
+    height: 50px !important;
+    line-height: 50px;
+    :global {
+        a{
+            color: #fff;
+            margin-left: 20px;
+        }
+        .logoWrapper {
+			display: flex;
+			// width: 200px;
+			justify-content: space-between;
+			align-items: center;
+			padding-left: 20px;
+            
+			.logoPic {
+				width: 25px;
+                margin-right: 20px;
+			}
+			p {
+				font-weight: bold;
+				margin-top: 15px;
+			}
+            .logoInfo {
+                height: 64px;
+                line-height: 64px;
+            }
+			.trigger {
+				margin-bottom: 15px;
+				display: none;
+				cursor: pointer;
+				font-size: 22px;
+			}
+            .ant-menu {
+                // width: 700px;
+                margin-left: 9px;
+                line-height: 50px;
+            }
+        
+		}
+        .menu{
+width: 500px;
+        }
+        .leftWrapper {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            .icon {
+                margin-right: 15px;
+            }
+            img {
+                width: 25px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            p {
+                margin-right: 15px;
+                margin-top: 10px;
+            }
+            .logout {
+                font-style: normal;
+                cursor: pointer;
+            }
+        }
+        @media (max-width: 575px)
+        {
+            .logoPic {
+			display: none;
+			}
+            .menu{
+                width: 100px;
+            }
+           
+        }
+    }
+}

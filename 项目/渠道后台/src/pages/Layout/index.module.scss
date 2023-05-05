@@ -1,0 +1,70 @@
+.root {
+  :global {
+    .box {
+      padding: 30px;
+      // border: 30px solid #f7f7f7;
+      background-color: #fff;
+      height: 100%;
+      // background-color: beige;
+    }
+    .layout-header {
+      color: rgb(72, 200, 250);
+      // height: 75px;
+      // position: fixed;
+     width: 100%;
+      background-color: black;
+      box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.1);
+    }
+    .layout-bread {
+      height: 35px;
+    }
+    .content{
+      // margin-left: 200px;
+    }
+    .ant-layout-sider-children {
+      height: 100vh;
+      // color: #fff;
+      // height: 100vh;
+    }
+    // .site-layout-background {
+    //   position: fixed;
+
+    // }
+    // .box {
+    //   position: fixed;
+    // }
+    // #components-layout-demo-custom-trigger .trigger {
+    //   padding: 0 24px;
+    //   font-size: 18px;
+    //   line-height: 64px;
+    //   cursor: pointer;
+    //   transition: color 0.3s;
+    // }
+
+    // #components-layout-demo-custom-trigger .trigger:hover {
+    //   color: #1890ff;
+    // }
+
+    // #components-layout-demo-custom-trigger .logo {
+    //   height: 32px;
+    //   margin: 16px;
+    //   background: rgba(255, 255, 255, 0.3);
+    // }
+
+    // .site-layout .site-layout-background {
+    //   background: #fff;
+    // }
+    .ant-layout-content {
+      height: 100%;
+      // position: relative;
+      // background-color: rgb(230, 225, 225);
+    }
+  //  媒体查询
+  @media (max-width: 575px)
+{.ant-form .ant-form-item .ant-form-item-label, .ant-form .ant-form-item .ant-form-item-control {
+    flex: 0 0 100%;
+    max-width: 70%;}
+}
+
+  }
+}

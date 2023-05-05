@@ -1,0 +1,23 @@
+
+.root{
+    :global{
+    //    number不会出现右边上下符号
+    input::-webkit-outer-spin-button,            input::-webkit-inner-spin-button{                -webkit-appearance: none !important;          }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+        .phoneCode{
+            width: 90px;
+            span{
+                font-size: 10px;
+            }
+        }
+     
+        .upData{
+         display: flex;
+         justify-content: center;
+        }
+       
+    }
+   
+}

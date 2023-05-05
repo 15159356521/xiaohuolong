@@ -1,0 +1,79 @@
+.root{
+
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 36px;
+    position: relative;
+    margin-top: 40px;
+    display: block;
+    font-size: 16px;
+    // overflow: auto;
+  overflow-x: auto;
+//   隐藏滚动条
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      width:0px;
+      display: none;
+    }
+   :global{
+        .father{
+    position: relative;
+    padding: 30px 40px;
+    background: #fff;
+    border-radius: 8px;
+    width: 1200px;
+    height: 1100px;
+        }
+        .main{
+            position: relative;
+            margin-top: 35px;
+        }
+
+        .labellogin{
+            float: left;
+            color: #666;
+        }
+         img{
+            width: 102px;
+            height: 102px;
+            display: inline-block;
+            position: relative;
+            margin-left: 20px;
+        }
+         p{
+            font-size: 14px;
+            line-height: 24px;
+            color: #8a939e;
+            position: relative;
+            bottom: -6px;
+            margin-left: 85px;
+        }
+
+
+        .maintab{
+            float: right;
+        }
+        .mainfl{
+            margin-left: 35px;
+            // color: red;
+        }
+        .tokenclass{
+            margin-left: 15px;
+        }
+        .tokenclass a{
+            margin-left: 5px;
+        }
+        
+
+        .msg{
+            margin-left: 80px;
+            // color: red;
+            
+        }
+        
+   }
+   
+}
+

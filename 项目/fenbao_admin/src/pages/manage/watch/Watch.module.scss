@@ -1,0 +1,46 @@
+.root {
+    background-color: rgb(248, 249, 249);
+    height: 100%;
+    :global {
+        .panel {
+            margin: 30px auto;
+            width: 680px;
+            min-height: 900px;
+            position: relative;
+            padding: 30px 40px;
+            background: #fff;
+            border-radius: 8px;
+           
+            .header{
+                .title {
+                line-height: 30px;
+                font-size: 22px;
+                color: #333333;
+                font-weight: bold;
+                word-break: break-all;
+            }
+            .author{
+         
+                    margin-left: 0;
+                    color: #444;
+          }
+      }
+      .content{
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon{
+            display: flex;
+            flex-flow: column;
+            color: rgb(236,236,236);
+        }
+        .icon svg{
+            height: 80px;
+            width: 90px;
+            fill: rgb(236,236,236);
+        }
+      }
+ 
+  }
+}}
